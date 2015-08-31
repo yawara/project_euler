@@ -37,15 +37,14 @@ if __name__ == '__main__':
       pass
     else:
       flag = False
-      for p in primes[:pp]:
-        tas = m - p
-        q, r = tas // 2, tas % 2
-        if r == 0:
-          k, is_s = is_square(q)
-          if is_s:
-            assert m == p + 2 * k**2
-            flag = True
-            break
+      for p in primes[1:pp]:
+        q = ( m - p ) // 2
+        k, is_s = is_square(q)
+        if is_s:
+          assert m == p + 2 * k**2
+          flag = True
+          break
+      
       if not flag:
         print("TERMINATED")
         print(m)
