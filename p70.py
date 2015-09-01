@@ -11,10 +11,14 @@ def phi(n):
   return int(rtv)
 
 def digits(n):
-  rtv = [ 0 for i in range(10) ] 
-  for d in str(n):
-    rtv[int(d)] += 1
-  return rtv
+  rtv = [ 0 for i in range(10) ]
+  
+  tmp = n
+  while True:
+    rtv[tmp%10] += 1
+    tmp //= 10
+    if tmp == 0:
+      return rtv
   
 if __name__ == "__main__":
   r = sys.maxsize

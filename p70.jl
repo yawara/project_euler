@@ -9,10 +9,15 @@ end
 
 function digits(n)
     rtv = { i => 0 for i in 0:9 }
-    for d in string(n)
-        rtv[parseint(d)] += 1
+    
+    tmp = n
+    while true
+        rtv[tmp%10] += 1
+        tmp = div(tmp, 10)
+        if tmp == 0
+            return rtv
+        end
     end
-    return rtv
 end
 
 function answer(N)
