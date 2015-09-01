@@ -37,10 +37,12 @@ def p(n):
 
 if __name__ == '__main__':
   n = 2
+  yt = young(2)
   while True:
-    p_n = p(n)
-    print(n, p_n)
-    if p_n % 1000000 == 0:
+    print(n, len(yt))
+    if len(yt) % 1000000 == 0:
       break
     n += 1
+    yt = raising_s(yt)
+    
   print(n)
