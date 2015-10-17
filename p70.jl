@@ -1,10 +1,9 @@
 function phi(n)
-    rtv = n
-    primes = keys(factor(n))
-    for p in primes;
-        rtv *= ( 1 - 1/p )  
+    rtv = 1
+    for (p, k) in factor(n)
+        rtv *= p^(k-1) * ( p - 1 )  
     end
-    return int(rtv)
+    return rtv
 end
 
 function digits(n)
